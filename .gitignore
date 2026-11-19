@@ -1,0 +1,11 @@
+# Configuración local con contraseñas: no se sube al repositorio.
+app/config/config.php
+
+# Archivos comprimidos y del sistema.
+*.rar
+*.zip
+.DS_Store
+Thumbs.db
+
+# Registros y temporales.
+*.log
