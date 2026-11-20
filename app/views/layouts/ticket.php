@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Plantilla mínima para el ticket imprimible.
  */
@@ -13,7 +13,7 @@ $tituloPagina = $tituloPagina ?? 'Ticket · Aqua Viva';
     <title><?= e($tituloPagina) ?></title>
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/estilos.css?v=2">
 </head>
 <body class="app">
 

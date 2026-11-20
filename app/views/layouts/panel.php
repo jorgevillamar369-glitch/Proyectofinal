@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Plantilla del panel interno: barra lateral, barra superior y contenido.
  * Variables: $contenido y los datos de la página.
@@ -40,7 +40,7 @@ foreach (preg_split('/\s+/', trim((string) $usuario['nombre'])) as $parte) {
     <meta name="description" content="Sistema de administración del acuario Aqua Viva.">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/estilos.css?v=2">
 </head>
 <body class="app">
 <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
@@ -48,7 +48,7 @@ foreach (preg_split('/\s+/', trim((string) $usuario['nombre'])) as $parte) {
 <div class="app-marco">
     <aside class="lateral" id="lateral" aria-label="Menú principal">
         <div class="lateral-marca">
-            <span class="marca-monograma">AV</span>
+            <span class="marca-monograma"><?= logoMarca(26) ?></span>
             <span>
                 <strong>Aqua Viva</strong>
                 <small>Administración</small>

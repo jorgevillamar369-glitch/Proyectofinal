@@ -240,6 +240,17 @@ function diagnostico_tanque(array $tanque, ?array $rango): array
 /* ------------------------------------------------------------------
  * Iconos SVG (sin emojis)
  * ------------------------------------------------------------------ */
+function logoMarca(int $tamano = 26): string
+{
+    return '<svg class="logo-marca" width="' . $tamano . '" height="' . $tamano . '" viewBox="0 0 32 32" '
+        . 'fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+        . '<path d="M6.5 15.5c4.2-4.8 10-4.8 14.2 0-4.2 4.8-10 4.8-14.2 0Z"/>'
+        . '<path d="M20.7 15.5 26.5 11.8v7.4l-5.8-3.7Z"/>'
+        . '<circle cx="11.8" cy="14.8" r=".95" fill="currentColor" stroke="none"/>'
+        . '<path d="M4 24c3.9 3 7.8 3 11.7 0s7.8-3 11.7 0"/>'
+        . '</svg>';
+}
+
 function icono(string $nombre, int $tamano = 20): string
 {
     $trazos = [

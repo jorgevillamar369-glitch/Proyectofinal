@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Plantilla de acceso: imagen a la izquierda y formulario a la derecha.
  */
@@ -14,7 +14,7 @@ $avisos = tomar_flash();
     <meta name="description" content="Ingreso al sistema de administración del acuario Aqua Viva.">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/estilos.css?v=2">
 </head>
 <body>
 
@@ -34,7 +34,7 @@ $avisos = tomar_flash();
     <section class="acceso-formulario">
         <div class="acceso-caja">
             <div class="acceso-marca">
-                <span class="marca-monograma">AV</span>
+                <span class="marca-monograma"><?= logoMarca(26) ?></span>
                 <span>
                     <strong>Aqua Viva</strong>
                     <small>Acuario de Quito</small>
