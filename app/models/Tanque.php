@@ -7,13 +7,24 @@ declare(strict_types=1);
 
 final class Tanque
 {
+    private const COLUMNAS_OCUPACION = "
+        SELECT t.id, t.codigo, t.nombre, t.habitat, t.capacidad, t.temperatura, t.ph,
+               t.iluminacion, t.estado, t.notas,
+               COALESCE(SUM(p.tamanio_cm), 0) AS carga_cm,
+               ROUND(t.capacidad / 10, 0) AS carga_maxima_cm,
+               ROUND(COALESCE(SUM(p.tamanio_cm), 0) * 100 / (t.capacidad / 10), 1) AS ocupacion_pct,
+               COUNT(p.id) AS total_peces
+        FROM tanques t
+        LEFT JOIN peces p ON p.id_tanque = t.id AND p.estado <> 'trasladado'";
+
+    private const AGRUPAR_OCUPACION = "
+        GROUP BY t.id, t.codigo, t.nombre, t.habitat, t.capacidad, t.temperatura, t.ph,
+                 t.iluminacion, t.estado, t.notas";
+
     public static function todos(): array
     {
         return db()->query(
-            'SELECT v.*, t.habitat, t.temperatura, t.ph, t.iluminacion, t.estado, t.notas
-             FROM vista_ocupacion v
-             INNER JOIN tanques t ON t.id = v.id
-             ORDER BY t.codigo'
+            self::COLUMNAS_OCUPACION . self::AGRUPAR_OCUPACION . ' ORDER BY t.codigo'
         )->fetchAll();
     }
 
@@ -28,7 +39,9 @@ final class Tanque
 
     public static function ocupacion(int $id): ?array
     {
-        $consulta = db()->prepare('SELECT * FROM vista_ocupacion WHERE id = :id');
+        $consulta = db()->prepare(
+            self::COLUMNAS_OCUPACION . ' WHERE t.id = :id' . self::AGRUPAR_OCUPACION
+        );
         $consulta->execute(['id' => $id]);
         $fila = $consulta->fetch();
 
