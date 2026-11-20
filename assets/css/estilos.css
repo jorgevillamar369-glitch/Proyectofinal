@@ -185,6 +185,10 @@ img {
     letter-spacing: .04em;
 }
 
+.marca-monograma .logo-marca {
+    display: block;
+}
+
 .sitio-marca strong {
     display: block;
     font-family: "Newsreader", Georgia, serif;
@@ -238,7 +242,7 @@ img {
 
 .portada {
     position: relative;
-    min-height: min(86vh, 780px);
+    min-height: max(86vh, 620px);
     display: flex;
     align-items: flex-end;
     color: #f4f8f9;

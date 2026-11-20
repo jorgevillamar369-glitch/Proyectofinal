@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Plantilla pública: portada, cabecera, pie y botón de créditos.
  * Variables esperadas: $contenido, $tituloPagina (opcional).
@@ -15,13 +15,13 @@ $tituloPagina = $tituloPagina ?? 'Aqua Viva · Acuario de Quito';
     <meta name="description" content="Acuario Aqua Viva en el norte de Quito: tanques marinos y de agua dulce, horarios, tarifas y visitas guiadas.">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/estilos.css?v=2">
 </head>
 <body class="sitio">
 
 <header class="sitio-barra">
     <a class="sitio-marca" href="<?= url() ?>">
-        <span class="marca-monograma">AV</span>
+        <span class="marca-monograma"><?= logoMarca(26) ?></span>
         <span>
             <strong>Aqua Viva</strong>
             <small>Acuario de Quito</small>
