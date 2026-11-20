@@ -11,13 +11,17 @@
     const botonMenu = document.getElementById('botonMenu');
     const velo = document.getElementById('velo');
 
-    function cerrarMenu() {
+    function cerrarMenu(devolverFoco) {
+        const estabaAbierto = document.body.classList.contains('menu-abierto');
         document.body.classList.remove('menu-abierto');
         if (botonMenu) {
             botonMenu.setAttribute('aria-expanded', 'false');
         }
         if (velo) {
             velo.hidden = true;
+        }
+        if (estabaAbierto && devolverFoco !== false && botonMenu) {
+            botonMenu.focus();
         }
     }
 
@@ -27,6 +31,15 @@
             botonMenu.setAttribute('aria-expanded', String(abierto));
             if (velo) {
                 velo.hidden = !abierto;
+            }
+
+            if (abierto) {
+                const primerEnlace = document.querySelector('.lateral .lateral-enlace');
+                if (primerEnlace) {
+                    primerEnlace.focus();
+                }
+            } else {
+                botonMenu.focus();
             }
         });
     }
@@ -67,7 +80,7 @@
             return;
         }
 
-        const contador = document.querySelector(caja.dataset.contador || '');
+        const contador = caja.dataset.contador ? document.querySelector(caja.dataset.contador) : null;
         const filas = Array.prototype.slice.call(tabla.querySelectorAll('tbody tr'));
 
         caja.addEventListener('input', function () {
@@ -99,11 +112,12 @@
         modal.id = 'modalEliminar';
         modal.tabIndex = -1;
         modal.setAttribute('aria-hidden', 'true');
+        modal.setAttribute('aria-labelledby', 'modalEliminarTitulo');
         modal.innerHTML =
             '<div class="modal-dialog modal-dialog-centered">' +
                 '<div class="modal-content">' +
                     '<div class="modal-header">' +
-                        '<h2 class="modal-title">Confirmar eliminación</h2>' +
+                        '<h2 class="modal-title" id="modalEliminarTitulo">Confirmar eliminación</h2>' +
                         '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>' +
                     '</div>' +
                     '<div class="modal-body">' +
@@ -285,4 +299,35 @@
         campoTarifa.addEventListener('change', calcularTotal);
         calcularTotal();
     }
+
+    /* -----------------------------------------------------------------
+       8. Accesibilidad de formularios y botones
+       ----------------------------------------------------------------- */
+    document.querySelectorAll('.campo-error').forEach(function (grupo) {
+        const control = grupo.querySelector('input, select, textarea');
+        const error = grupo.querySelector('.error-campo');
+
+        if (!control || !error) {
+            return;
+        }
+
+        if (!error.id) {
+            const base = control.id || 'campo';
+            error.id = 'error-' + base + '-' + Math.random().toString(36).slice(2, 6);
+        }
+
+        control.setAttribute('aria-invalid', 'true');
+        control.setAttribute('aria-describedby', error.id);
+    });
+
+    const primerError = document.querySelector('.campo-error input, .campo-error select, .campo-error textarea');
+    if (primerError) {
+        primerError.focus();
+    }
+
+    document.querySelectorAll('a[title], button[title]').forEach(function (elemento) {
+        if (!elemento.hasAttribute('aria-label')) {
+            elemento.setAttribute('aria-label', elemento.getAttribute('title'));
+        }
+    });
 })();

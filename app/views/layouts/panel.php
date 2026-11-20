@@ -40,7 +40,7 @@ foreach (preg_split('/\s+/', trim((string) $usuario['nombre'])) as $parte) {
     <meta name="description" content="Sistema de administración del acuario Aqua Viva.">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/estilos.css?v=2">
+    <link rel="stylesheet" href="assets/css/estilos.css?v=4">
 </head>
 <body class="app">
 <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
@@ -87,7 +87,7 @@ foreach (preg_split('/\s+/', trim((string) $usuario['nombre'])) as $parte) {
                 <span class="punto"></span>
                 Sistemas de bombeo activos
             </p>
-            <p class="lateral-nota">Turno de la mañana · 08:00 a 16:00</p>
+            <p class="lateral-nota">Turno: 08:00 – 16:00</p>
         </div>
     </aside>
 
@@ -123,7 +123,7 @@ foreach (preg_split('/\s+/', trim((string) $usuario['nombre'])) as $parte) {
             <?php if ($avisos): ?>
                 <div class="avisos">
                     <?php foreach ($avisos as $aviso): ?>
-                        <div class="aviso aviso--<?= e($aviso['tipo']) ?>" role="status">
+                        <div class="aviso aviso--<?= e($aviso['tipo']) ?>" role="<?= $aviso['tipo'] === 'error' ? 'alert' : 'status' ?>">
                             <?= icono($aviso['tipo'] === 'ok' ? 'ok' : 'alerta', 18) ?>
                             <span><?= e($aviso['mensaje']) ?></span>
                         </div>
@@ -133,7 +133,6 @@ foreach (preg_split('/\s+/', trim((string) $usuario['nombre'])) as $parte) {
 
             <div class="pagina-cabeza">
                 <div>
-                    <p class="sobretitulo"><?= e($subtitulo) ?></p>
                     <h1><?= e($titulo) ?></h1>
                 </div>
                 <?php if ($acciones !== ''): ?>

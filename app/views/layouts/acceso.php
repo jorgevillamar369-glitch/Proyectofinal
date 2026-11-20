@@ -13,20 +13,17 @@ $avisos = tomar_flash();
     <title>Acceso del personal · Aqua Viva</title>
     <meta name="description" content="Ingreso al sistema de administración del acuario Aqua Viva.">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/estilos.css?v=2">
+    <link rel="stylesheet" href="assets/css/estilos.css?v=4">
 </head>
 <body>
 
 <main class="acceso">
-    <section class="acceso-imagen" aria-hidden="true">
+    <section class="acceso-imagen">
         <img src="assets/img/acceso-acuario.jpg" alt="">
         <div class="acceso-imagen-texto">
-            <p class="kicker">Panel interno</p>
             <h1>Administración del acuario</h1>
             <p>
-                Control de peces, tanques, entradas y finanzas
-                del acuario.
+                Peces, tanques, entradas y finanzas.
             </p>
         </div>
     </section>

@@ -945,17 +945,6 @@ img {
     color: #fff;
 }
 
-.lateral-enlace.esta-activo::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 7px;
-    bottom: 7px;
-    width: 2px;
-    background: var(--acento);
-    border-radius: 2px;
-}
-
 .lateral-enlace .icono {
     color: rgba(211, 224, 228, .72);
 }
@@ -1354,20 +1343,6 @@ img {
     border-radius: var(--radio);
     padding: 16px 18px 15px;
     position: relative;
-}
-
-.dato::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 16px;
-    bottom: 16px;
-    width: 2px;
-    background: var(--linea);
-}
-
-.dato--acento::before {
-    background: var(--acento);
 }
 
 .dato-etiqueta {
@@ -2280,4 +2255,302 @@ textarea.form-control {
         border: 0;
         max-width: none;
     }
+}
+
+/* =====================================================================
+   Audit refinements (2026-11-20)
+   ===================================================================== */
+
+h1, h2, h3 { text-wrap: balance; }
+
+.portada::after {
+    background:
+        linear-gradient(180deg, rgba(7, 21, 27, .74) 0%, rgba(7, 21, 27, .20) 40%, rgba(7, 21, 27, .90) 100%),
+        linear-gradient(90deg, rgba(7, 21, 27, .82) 0%, rgba(7, 21, 27, .42) 45%, rgba(7, 21, 27, 0) 75%);
+}
+
+.sitio-marca small {
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: none;
+    opacity: .86;
+}
+
+.sitio-nav .enlace-acceso {
+    font-size: 12.5px;
+    letter-spacing: .02em;
+    text-transform: none;
+}
+
+.portada-datos span {
+    font-size: 11.5px;
+    letter-spacing: .02em;
+    text-transform: none;
+    color: #d3e2e6;
+}
+
+.tarifas caption {
+    font-size: 11.5px;
+    letter-spacing: .02em;
+    text-transform: none;
+}
+
+.lateral-marca small {
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: none;
+    color: #a9bcc2;
+}
+
+.lateral-grupo {
+    font-size: 11px;
+    letter-spacing: .04em;
+    text-transform: none;
+    color: #93a8af;
+}
+
+.lateral-nota {
+    font-size: 11px;
+    color: #93a8af;
+}
+
+.lateral-enlace.esta-activo {
+    background: rgba(255, 255, 255, .09);
+    color: #fff;
+}
+
+.dato--acento .dato-valor {
+    color: var(--acento);
+}
+
+.barra-sistema {
+    text-transform: none;
+    letter-spacing: .02em;
+}
+
+.rol-chip {
+    text-transform: none;
+    font-size: 11.5px;
+    letter-spacing: .01em;
+    color: #7d2f1c;
+    background: #f6e7e2;
+}
+
+.panel-cabeza h2 {
+    text-transform: none;
+    letter-spacing: .01em;
+    font-size: 13px;
+}
+
+.dato-etiqueta {
+    text-transform: none;
+    letter-spacing: .02em;
+    font-size: 11.5px;
+}
+
+.tabla th {
+    text-transform: none;
+    letter-spacing: .02em;
+    font-size: 11.5px;
+}
+
+.etiqueta-superior {
+    text-transform: none;
+    letter-spacing: .02em;
+    font-size: 11.5px;
+}
+
+.dato-pie,
+.panel-nota,
+.tabla .secundario,
+.tanque-mini-datos,
+.barra-carga-valor {
+    font-size: 12px;
+}
+
+.panel .lista-tanques { gap: 0; }
+
+.panel .tanque-mini {
+    border: 0;
+    border-bottom: 1px solid var(--linea);
+    border-radius: 0;
+    background: transparent;
+    padding: 12px 0;
+}
+
+.panel .tanque-mini:last-child { border-bottom: 0; }
+.panel .tanque-mini:hover { background: var(--superficie-2); }
+
+.form-control::placeholder { color: #5f747e; }
+
+.pildora--alerta {
+    color: #7a520f;
+    background: #f7ecd7;
+}
+
+.rejilla-datos--tres { grid-template-columns: repeat(3, 1fr); }
+
+.acceso-corto { display: none; }
+
+@media (max-width: 1080px) {
+    .rejilla-datos--tres { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+    .lateral {
+        visibility: hidden;
+        transition: transform 220ms ease, visibility 220ms ease;
+    }
+    body.menu-abierto .lateral { visibility: visible; }
+}
+
+@media (max-width: 680px) {
+    .form-control, .form-select { font-size: 16px; }
+    .rejilla-datos--tres { grid-template-columns: 1fr; }
+    .sitio-nav .enlace-acceso { font-size: 11.5px; padding: 8px 12px; }
+    .pie-sitio { padding-bottom: 88px; }
+}
+
+@media (max-width: 480px) {
+    .acceso-largo { display: none; }
+    .acceso-corto { display: inline; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .barra-carga-relleno,
+    .coleccion img,
+    .boton,
+    .boton-secundario,
+    .enlace-acceso,
+    .lateral,
+    .firma-boton { transition: none; }
+}
+
+@media (max-width: 680px) {
+    .firma-boton {
+        position: static;
+        width: max-content;
+        margin: 18px auto 0;
+        background: #f2f7f8;
+        color: #0c222b;
+        border-color: rgba(12, 34, 43, .18);
+        box-shadow: none;
+    }
+
+    .firma-boton strong { color: #0c222b; }
+
+    .firma-monograma {
+        color: #b0492f;
+        border-color: #b0492f;
+    }
+}
+
+.coleccion-meta {
+    text-transform: none;
+    letter-spacing: .02em;
+    font-size: 11.5px;
+}
+
+.banda .boton-claro {
+    text-transform: none;
+    letter-spacing: .02em;
+    font-size: 13.5px;
+}
+
+.acceso-marca small {
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: none;
+}
+
+.demo-cuentas strong {
+    font-size: 11.5px;
+    letter-spacing: .02em;
+    text-transform: none;
+}
+
+.campo > label,
+.etiqueta-campo {
+    text-transform: none;
+    letter-spacing: .01em;
+    font-size: 12px;
+}
+
+/* Final pass: contrast and legibility */
+.sitio-barra {
+    background: linear-gradient(180deg, rgba(7, 21, 27, .62) 0%, rgba(7, 21, 27, 0) 100%);
+}
+
+.portada::after {
+    background:
+        linear-gradient(180deg, rgba(7, 21, 27, .78) 0%, rgba(7, 21, 27, .26) 40%, rgba(7, 21, 27, .72) 68%, rgba(7, 21, 27, .95) 100%),
+        linear-gradient(90deg, rgba(7, 21, 27, .92) 0%, rgba(7, 21, 27, .62) 48%, rgba(7, 21, 27, .18) 72%, rgba(7, 21, 27, 0) 88%);
+}
+
+.sitio-marca small { opacity: .95; }
+
+.portada-texto > p { color: #e6f0f3; }
+
+.dato-etiqueta,
+.tabla th,
+.etiqueta-superior,
+.portada-datos span,
+.coleccion-meta,
+.panel-nota,
+.demo-cuentas strong,
+.lateral-grupo,
+.lateral-nota,
+.barra-fecha,
+.lateral-clima,
+.pie,
+.dato-pie,
+.tabla .secundario,
+.tanque-mini-datos,
+.barra-carga-valor {
+    font-size: 12px;
+}
+
+@media (max-width: 680px) {
+    .firma-boton { font-size: 11.5px; }
+}
+
+@media (max-width: 680px) {
+    .portada-datos {
+        background: linear-gradient(90deg, rgba(7, 21, 27, .55) 0%, rgba(7, 21, 27, .18) 75%, rgba(7, 21, 27, 0) 100%);
+        padding: 12px 14px 6px;
+        margin-left: -14px;
+    }
+
+    .firma-boton { display: flex; }
+}
+
+.sitio-barra--solida {
+    position: static;
+    inset: auto;
+    background: var(--mar);
+}
+
+.firma-boton > span:last-child {
+    white-space: nowrap;
+    flex: 0 0 auto;
+}
+
+.firma-boton {
+    flex-wrap: nowrap;
+}
+
+.firma-boton > span:last-child {
+    min-width: max-content;
+}
+
+.firma-boton { min-width: 220px; }
+
+.pie-sitio .firma-boton strong {
+    display: inline;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 500;
+    color: inherit;
+    margin: 0;
 }

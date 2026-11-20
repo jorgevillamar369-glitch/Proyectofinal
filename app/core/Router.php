@@ -59,6 +59,6 @@ final class Router
     private static function noEncontrado(): void
     {
         http_response_code(404);
-        View::render('errores/404', ['tituloPagina' => 'Página no encontrada'], 'publica');
+        View::render('errores/404', ['tituloPagina' => 'Página no encontrada', 'cabeceraSolida' => true], 'publica');
     }
 }

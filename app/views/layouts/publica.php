@@ -14,12 +14,14 @@ $tituloPagina = $tituloPagina ?? 'Aqua Viva · Acuario de Quito';
     <title><?= e($tituloPagina) ?></title>
     <meta name="description" content="Acuario Aqua Viva en el norte de Quito: tanques marinos y de agua dulce, horarios, tarifas y visitas guiadas.">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/estilos.css?v=2">
+    <?php if (!empty($preloadImagen)): ?>
+        <link rel="preload" as="image" href="<?= e($preloadImagen) ?>" fetchpriority="high">
+    <?php endif; ?>
+    <link rel="stylesheet" href="assets/css/estilos.css?v=4">
 </head>
 <body class="sitio">
 
-<header class="sitio-barra">
+<header class="sitio-barra <?= !empty($cabeceraSolida) ? 'sitio-barra--solida' : '' ?>">
     <a class="sitio-marca" href="<?= url() ?>">
         <span class="marca-monograma"><?= logoMarca(26) ?></span>
         <span>
@@ -31,7 +33,10 @@ $tituloPagina = $tituloPagina ?? 'Aqua Viva · Acuario de Quito';
     <nav class="sitio-nav" aria-label="Secciones del sitio">
         <a href="<?= url() ?>#colecciones">Colecciones</a>
         <a href="<?= url() ?>#visita">Visita</a>
-        <a class="enlace-acceso" href="<?= url('acceso') ?>">Acceso del personal</a>
+        <a class="enlace-acceso" href="<?= url('acceso') ?>">
+            <span class="acceso-largo">Acceso del personal</span>
+            <span class="acceso-corto">Acceso</span>
+        </a>
     </nav>
 </header>
 
@@ -50,12 +55,12 @@ $tituloPagina = $tituloPagina ?? 'Aqua Viva · Acuario de Quito';
             <p><a href="<?= url('acceso') ?>">Acceso del personal</a></p>
         </div>
     </div>
-</footer>
 
-<button class="firma-boton" type="button" id="botonFirma" aria-haspopup="dialog">
-    <span class="firma-monograma" aria-hidden="true">JV</span>
-    <span>Creado por <strong>Jorge Villamar</strong></span>
-</button>
+    <button class="firma-boton" type="button" id="botonFirma" aria-haspopup="dialog">
+        <span class="firma-monograma" aria-hidden="true">JV</span>
+        <span>Creado por <strong>Jorge Villamar</strong></span>
+    </button>
+</footer>
 
 <dialog class="firma-dialogo" id="firmaDialogo" aria-label="Créditos del sitio">
     <div class="firma-dialogo-caja">

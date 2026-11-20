@@ -34,6 +34,7 @@ final class InicioController extends Controller
 
         $this->vista('inicio', [
             'tituloPagina'   => 'Aqua Viva · Acuario de Quito',
+            'preloadImagen'  => 'assets/img/hero-tanque.jpg',
             'tanquesActivos' => $totales['tanquesOperativos'],
             'tanquesTotal'   => $totales['tanquesTotal'],
             'totalEspecies'  => $totales['especies'],
