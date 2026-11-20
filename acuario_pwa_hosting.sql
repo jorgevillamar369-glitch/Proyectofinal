@@ -14,7 +14,6 @@
 SET NAMES utf8mb4;
 
 SET FOREIGN_KEY_CHECKS = 0;
-DROP VIEW IF EXISTS vista_ocupacion;
 DROP TABLE IF EXISTS entradas, finanzas, peces, visitantes, tanques, especies, usuarios, roles;
 SET FOREIGN_KEY_CHECKS = 1;
 
@@ -228,19 +227,6 @@ INSERT INTO finanzas (fecha, tipo, categoria, descripcion, monto, id_usuario) VA
 (LEAST(DATE_ADD(@mes, INTERVAL 1 DAY),  CURDATE()), 'egreso',  'Servicios',       'Internet y telefonía del edificio',                86.50, 1);
 
 -- ---------------------------------------------------------------------
--- 6. Vista de apoyo: ocupación de cada tanque según la regla
---    "10 litros de agua por cada centímetro de pez adulto".
+-- La ocupación de cada tanque se calcula en app/models/Tanque.php,
+-- sin vistas, para que la base funcione en cualquier hospedaje.
 -- ---------------------------------------------------------------------
-CREATE OR REPLACE VIEW vista_ocupacion AS
-SELECT
-    t.id,
-    t.codigo,
-    t.nombre,
-    t.capacidad,
-    COALESCE(SUM(p.tamanio_cm), 0)                    AS carga_cm,
-    ROUND(t.capacidad / 10, 0)                        AS carga_maxima_cm,
-    ROUND(COALESCE(SUM(p.tamanio_cm), 0) * 100 / (t.capacidad / 10), 1) AS ocupacion_pct,
-    COUNT(p.id)                                        AS total_peces
-FROM tanques t
-LEFT JOIN peces p ON p.id_tanque = t.id AND p.estado <> 'trasladado'
-GROUP BY t.id, t.codigo, t.nombre, t.capacidad;

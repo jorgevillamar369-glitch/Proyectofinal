@@ -100,7 +100,7 @@ Funciones destacadas:
 
 1. Copia la carpeta del proyecto dentro de tu servidor web.
 2. Importa `acuario_pwa.sql` desde phpMyAdmin. Ese archivo crea la base
-   `acuario_pwa`, las tablas, la vista `vista_ocupacion` y los datos de ejemplo.
+   `acuario_pwa`, las tablas y los datos de ejemplo.
 3. Si no existe `app/config/config.php`, copia `app/config/config.example.php`
    con ese nombre y ajusta los datos de MySQL. En Laragon el puerto puede ser
    `3307`; en XAMPP normalmente `3306`.
