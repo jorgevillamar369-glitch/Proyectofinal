@@ -35,7 +35,7 @@ $soloVisitantes = Auth::puedeVisitantes() && !Auth::puedePeces();
 <?php elseif ($soloVisitantes): ?>
     <div class="rejilla-datos">
         <article class="dato dato--acento">
-            <p class="dato-etiqueta">Visitantes este mes</p>
+            <p class="dato-etiqueta">Personas este mes</p>
             <p class="dato-valor"><?= (int) $mes['personas'] ?></p>
             <p class="dato-pie">personas registradas en <?= (int) $mes['entradas'] ?> ventas</p>
         </article>
@@ -63,7 +63,7 @@ $soloVisitantes = Auth::puedeVisitantes() && !Auth::puedePeces();
             <p class="dato-pie">en <?= (int) $totales['tanquesTotal'] ?> tanques del edificio</p>
         </article>
         <article class="dato">
-            <p class="dato-etiqueta">Visitantes este mes</p>
+            <p class="dato-etiqueta">Personas este mes</p>
             <p class="dato-valor"><?= (int) $mes['personas'] ?></p>
             <p class="dato-pie"><?= (int) $mes['entradas'] ?> entradas vendidas</p>
         </article>
@@ -119,9 +119,8 @@ $soloVisitantes = Auth::puedeVisitantes() && !Auth::puedePeces();
                     </article>
                 <?php endforeach; ?>
             </div>
-            <p class="texto-tenue" style="font-size: 11.5px; margin-top: 14px;">
-                La barra compara los centímetros de pez con la capacidad recomendada
-                (10 litros de agua por centímetro).
+            <p class="texto-tenue" style="font-size: 12px; margin-top: 14px;">
+                Cada centímetro de pez necesita 10 litros de agua.
             </p>
         </div>
     </section>

@@ -5,7 +5,7 @@
  */
 ?>
 <h2>Entrar al sistema</h2>
-<p class="acceso-intro">Usa la cuenta que te asignó el administrador del acuario.</p>
+<p class="acceso-intro">Usa la cuenta que te asignó el administrador.</p>
 
 <?php if ($error !== ''): ?>
     <div class="aviso aviso--error" role="alert" style="margin-bottom: 16px;">

@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 /**
  * Listado de tanques.
  * Variables: $tanques, $totalLitros, $totalPeces, $totalAlertas.
  */
 ?>
-<div class="rejilla-datos" style="grid-template-columns: repeat(3, 1fr);">
+<div class="rejilla-datos rejilla-datos--tres">
     <article class="dato dato--acento">
         <p class="dato-etiqueta">Tanques registrados</p>
         <p class="dato-valor"><?= count($tanques) ?></p>

@@ -12,8 +12,7 @@ $tituloPagina = $tituloPagina ?? 'Ticket · Aqua Viva';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= e($tituloPagina) ?></title>
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/estilos.css?v=2">
+        <link rel="stylesheet" href="assets/css/estilos.css?v=4">
 </head>
 <body class="app">
 

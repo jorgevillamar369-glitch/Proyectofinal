@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 /**
  * Directorio de visitantes.
  * Variables: $visitantes, $resumen, $busqueda, $totalEntradas.
  */
 ?>
-<div class="rejilla-datos" style="grid-template-columns: repeat(3, 1fr);">
+<div class="rejilla-datos rejilla-datos--tres">
     <article class="dato dato--acento">
         <p class="dato-etiqueta">Visitantes registrados</p>
         <p class="dato-valor"><?= (int) $resumen['total'] ?></p>
@@ -40,7 +40,7 @@
                     <th scope="col">Visitante</th>
                     <th scope="col">Contacto</th>
                     <th scope="col">Tarifa habitual</th>
-                    <th scope="col" class="num">Visitas</th>
+                    <th scope="col" class="num">Entradas</th>
                     <th scope="col" class="num">Gasto acumulado</th>
                     <th scope="col">Registro</th>
                     <th scope="col" class="acciones"><span class="visualmente-oculto">Acciones</span></th>

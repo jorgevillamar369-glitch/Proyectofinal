@@ -1,12 +1,12 @@
-<?php
+﻿<?php
 /**
  * Listado de peces.
  * Variables: $peces, $resumen, $busqueda.
  */
 ?>
-<div class="rejilla-datos" style="grid-template-columns: repeat(3, 1fr);">
+<div class="rejilla-datos rejilla-datos--tres">
     <article class="dato dato--acento">
-        <p class="dato-etiqueta">Ejemplares activos</p>
+        <p class="dato-etiqueta">Peces registrados</p>
         <p class="dato-valor"><?= (int) $resumen['total'] ?></p>
         <p class="dato-pie">tamaño promedio de <?= number_format((float) $resumen['promedio'], 1, ',', '.') ?> cm</p>
     </article>

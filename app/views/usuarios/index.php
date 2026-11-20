@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 /**
  * Listado del personal.
  * Variables: $usuarios, $resumen.
  */
 ?>
-<div class="rejilla-datos" style="grid-template-columns: repeat(3, 1fr);">
+<div class="rejilla-datos rejilla-datos--tres">
     <article class="dato dato--acento">
         <p class="dato-etiqueta">Cuentas registradas</p>
         <p class="dato-valor"><?= (int) $resumen['total'] ?></p>

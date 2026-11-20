@@ -5,11 +5,10 @@
  */
 ?>
 <section class="portada">
-    <img class="portada-imagen" src="assets/img/hero-tanque.jpg"
+    <img class="portada-imagen" src="assets/img/hero-tanque.jpg" fetchpriority="high"
          alt="Tanque principal del acuario visto desde el ventanal, con visitantes y un buceador dentro del agua">
     <div class="portada-interior">
         <div class="portada-texto">
-            <p class="kicker">Quito · Ecuador</p>
             <h1>Acuario en el norte de Quito</h1>
             <p>
                 El acuario tiene <?= (int) $tanquesTotal ?> tanques instalados y <?= (int) $tanquesActivos ?> abiertos al público.
@@ -19,15 +18,15 @@
             <div class="portada-datos">
                 <div>
                     <strong><?= (int) $tanquesActivos ?></strong>
-                    <span>tanques en exhibición</span>
+                    <span>Tanques en exhibición</span>
                 </div>
                 <div>
                     <strong><?= (int) $totalEspecies ?></strong>
-                    <span>especies registradas</span>
+                    <span>Especies registradas</span>
                 </div>
                 <div>
                     <strong><?= number_format((int) $litros, 0, ',', '.') ?> L</strong>
-                    <span>de agua en circulación</span>
+                    <span>De agua en circulación</span>
                 </div>
             </div>
         </div>
@@ -37,7 +36,6 @@
 <section class="seccion" id="colecciones">
     <div class="seccion-cabeza">
         <div>
-            <p class="kicker" style="color: var(--acento);">Colecciones permanentes</p>
             <h2>Los tanques principales</h2>
         </div>
     </div>
@@ -74,7 +72,6 @@
 <section class="visita" id="visita">
     <div class="visita-interior">
         <div>
-            <p class="kicker" style="color: var(--acento);">Planifica tu visita</p>
             <h2>Horarios</h2>
             <p class="visita-intro">
                 La taquilla cierra 45 minutos antes. Los lunes el acuario permanece cerrado
@@ -92,7 +89,6 @@
         </div>
 
         <div>
-            <p class="kicker" style="color: var(--acento);">Taquilla</p>
             <h2>Tarifas</h2>
             <p class="visita-intro">Precios en dólares, por persona. Los menores de 3 años no pagan.</p>
 
@@ -109,8 +105,8 @@
             </table>
 
             <p class="nota-tarifas">
-                Los grupos escolares deben reservar con 48 horas de anticipación.
                 La visita guiada está incluida en la entrada del sábado.
+                Para grupos, consulta en taquilla.
             </p>
         </div>
     </div>

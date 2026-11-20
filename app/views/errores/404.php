@@ -1,10 +1,9 @@
-<?php
+﻿<?php
 /**
  * Página 404.
  */
 ?>
 <section class="seccion" style="max-width: 720px; padding-top: 80px;">
-    <p class="kicker" style="color: var(--acento);">Error 404</p>
     <h1 style="font-size: 44px; margin-bottom: 14px;">No encontramos esa página.</h1>
     <p style="color: var(--tinta-2); max-width: 52ch; margin-bottom: 24px;">
         La dirección que abriste no existe o cambió de lugar. Puedes volver a la portada
