@@ -2554,3 +2554,53 @@ h1, h2, h3 { text-wrap: balance; }
     color: inherit;
     margin: 0;
 }
+
+/* Creator credit variants */
+.firma-boton--lateral {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    margin: 10px 0 0;
+    padding: 8px 10px;
+    justify-content: flex-start;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    color: #c9d9de;
+    font-size: 11.5px;
+    white-space: nowrap;
+}
+
+.firma-boton--lateral:hover {
+    background: rgba(255, 255, 255, .06);
+    color: #fff;
+    transform: none;
+}
+
+.firma-boton--lateral .firma-monograma {
+    width: 24px;
+    height: 24px;
+    color: #f0c9bf;
+    border-color: rgba(211, 224, 228, .45);
+}
+
+.firma-boton--lateral strong { color: #f2f7f8; font-weight: 600; }
+
+.firma-boton--pie {
+    display: flex;
+    position: static;
+    width: max-content;
+    min-width: 0;
+    margin: 26px auto 0;
+    background: var(--superficie);
+    color: var(--tinta);
+    border-color: var(--linea);
+    box-shadow: none;
+}
+
+.firma-boton--pie .firma-monograma {
+    color: var(--acento);
+    border-color: var(--acento);
+}
+
+.firma-boton--pie strong { color: var(--tinta); font-weight: 600; }

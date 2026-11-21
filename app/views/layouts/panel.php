@@ -40,7 +40,7 @@ foreach (preg_split('/\s+/', trim((string) $usuario['nombre'])) as $parte) {
     <meta name="description" content="Sistema de administración del acuario Aqua Viva.">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/estilos.css?v=4">
+    <link rel="stylesheet" href="assets/css/estilos.css?v=5">
 </head>
 <body class="app">
 <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
@@ -88,6 +88,7 @@ foreach (preg_split('/\s+/', trim((string) $usuario['nombre'])) as $parte) {
                 Sistemas de bombeo activos
             </p>
             <p class="lateral-nota">Turno: 08:00 – 16:00</p>
+            <?php $variante = 'lateral'; require __DIR__ . '/../partials/creador.php'; ?>
         </div>
     </aside>
 
