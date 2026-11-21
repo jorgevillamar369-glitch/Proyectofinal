@@ -13,7 +13,7 @@ $avisos = tomar_flash();
     <title>Acceso del personal · Aqua Viva</title>
     <meta name="description" content="Ingreso al sistema de administración del acuario Aqua Viva.">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/css/estilos.css?v=4">
+    <link rel="stylesheet" href="assets/css/estilos.css?v=5">
 </head>
 <body>
 
@@ -52,6 +52,8 @@ $avisos = tomar_flash();
             <p class="acceso-pie">
                 <a href="<?= url() ?>">Volver a la página del acuario</a>
             </p>
+
+            <?php $variante = 'flotante'; require __DIR__ . '/../partials/creador.php'; ?>
         </div>
     </section>
 </main>
